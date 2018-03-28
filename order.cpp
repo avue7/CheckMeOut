@@ -14,6 +14,9 @@ void order::addItem(item i) {
   if( !closed )
   {
     itemList.push_back(i);
+    // Any time an item gets added to order then
+    // notify observers - the customer view and cashier view.
+    notifyObservers();
   }
 }
 
